@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mkdir sample-file'
+                sh 'python --version'
             }
         }
     }
