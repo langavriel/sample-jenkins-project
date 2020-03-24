@@ -2,6 +2,11 @@ pipeline {
     agent { docker { image 'python:3.7.2' } }
     
     stages {
+	stage ('checkout scm'){
+		steps {
+			chekout scm
+	    }
+	  }
         stage('Build') {
             steps {
                 echo "Starting the Build stage"
