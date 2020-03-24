@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo "Starting the Build stage"
                 sh 'pip install -r requirements.txt'
+		sh 'docker build . -t app:latest'
             }
          }    
         stage('Test') {
@@ -21,7 +22,7 @@ pipeline {
         		}
         	}	
         	steps {
-        		echo "Starting the Deploy stage"
+        		sh 'docker push app:latest'
         	} 
        }
    }    
